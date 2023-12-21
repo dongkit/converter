@@ -1,0 +1,93 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: #3262B5;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    min-height: auto;
+    background-color: hsla(0, 0%, 10%, 0.1);
+    border: 2px solid hsl(0, 0%, 100%);
+    border-radius: 1rem;
+    backdrop-filter: blur(5px);
+    margin: 2rem;
+    padding: 0 0 2rem;
+}
+.column {
+    float: left;
+    width: 50%;
+    padding: 20px;
+    height: 100px;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.row {
+    align-items: center;
+    padding-left: 10px;
+}
+.form-group {
+    padding-left: 30px;
+}
+h1 {
+    font-size: 25px;
+    padding-top: 20px;
+    text-align: center;
+    color: #d7e6ff;
+    word-spacing: 1px;
+}
+label {
+    display: flex;
+    margin-bottom: 5px;
+    color: white;
+}
+input {
+    width: 445px;
+    height: 40px;
+    font-size: 15px;
+    color: white;
+    border-radius: 5px;
+    background-color: hsla(0, 0%, 10%, 0.1);
+    border: 2px solid hsl(0, 0%, 100%);
+}
+select {
+    width: 200px;
+    height: 50px;
+    color: white;
+    font-size: 17px;
+    border-radius: 5px;
+    background-color: hsla(0, 0%, 10%, 0.1);
+    border: 2px solid hsl(0, 0%, 100%);
+}
+select option {
+    color: black;
+}
+button {
+    margin: 20px 0 20px 0;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid hsl(0, 0%, 100%);
+    background-color: hsla(0, 0%, 10%, 0.1);
+    font-size: 17px;
+    font-weight: 500;
+    color: white ;
+    cursor: pointer;
+}
