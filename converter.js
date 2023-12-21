@@ -40,9 +40,17 @@ function playConversionSound() {
     audio.play();
 }
 
+function stopConversionSound() {
+    const audio = document.getElementById("conversionSound");
+
+    audio.pause();
+    audio.currentTime = 0;
+}
+
 function resetFields() {
     document.getElementById("numberInput").value = "";
     document.getElementById("convertedOutput").value = "";
+    stopConversionSound();
 }
 
 function updateToOptions() {
@@ -99,6 +107,3 @@ document.getElementById("numberInput").addEventListener("input", function () {
         this.value = inputValue.substring(0, inputValue.length - 1);
     }
 });
-function logout () {
-    window.location.href = 'index.html';
-}

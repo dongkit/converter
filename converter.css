@@ -1,93 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Quicksand', sans-serif;
 }
 body {
-    height: 100vh;
-    width: 100%;
-    background-color: #3262B5;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #000;
 }
-.container {
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 500px;
-    min-height: auto;
-    background-color: hsla(0, 0%, 10%, 0.1);
-    border: 2px solid hsl(0, 0%, 100%);
-    border-radius: 1rem;
-    backdrop-filter: blur(5px);
-    margin: 2rem;
-    padding: 0 0 2rem;
+section {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2px;
+	flex-wrap: wrap;
+	overflow: hidden;
 }
-.column {
-    float: left;
-    width: 50%;
+section::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(#000,#0f0,#000);
+	animation: animate 5s linear infinite;
+}
+@keyframes animate {
+	0%
+	{
+		transform: translateY(-100%);
+	}
+	100%
+	{
+		transform: translateY(100%);
+	}
+}
+section span {
+	position: relative;
+	display: block;
+	width: calc(6.25vw - 2px);
+	height: calc(6.25vw - 2px);
+	background: #181818;
+	z-index: 2;
+	transition: 1.5s;
+}
+section span:hover {
+	background: #0f0;
+	transition: 0s;
+}
+section .converter {
+	position: absolute;
+	width: 400px;
+  background: #222;  
+	z-index: 1000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 40px;
+	border-radius: 4px;
+	box-shadow: 0 15px 35px rgba(0,0,0,9);
+}
+section .converter .content {
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 40px;
+}
+section .converter .content h2 {
+	font-size: 2em;
+	color: #0f0;
+	text-transform: uppercase;
+}
+section .converter .content .form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+.converter {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #000;
     padding: 20px;
-    height: 100px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+
+h2 {
+    color: #0f0;
 }
+
 .row {
-    align-items: center;
-    padding-left: 10px;
-}
-.form-group {
-    padding-left: 30px;
-}
-h1 {
-    font-size: 25px;
-    padding-top: 20px;
-    text-align: center;
-    color: #d7e6ff;
-    word-spacing: 1px;
-}
-label {
     display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    flex: 1;
+    margin-right: 10px;
+}
+
+label {
+    color: #0f0;
+    display: block;
     margin-bottom: 5px;
-    color: white;
 }
-input {
-    width: 445px;
-    height: 40px;
-    font-size: 15px;
-    color: white;
+
+select, input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    background-color: #000;
+    color: #0f0;
+    border: 1px solid #0f0;
     border-radius: 5px;
-    background-color: hsla(0, 0%, 10%, 0.1);
-    border: 2px solid hsl(0, 0%, 100%);
 }
-select {
-    width: 200px;
-    height: 50px;
-    color: white;
-    font-size: 17px;
-    border-radius: 5px;
-    background-color: hsla(0, 0%, 10%, 0.1);
-    border: 2px solid hsl(0, 0%, 100%);
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
 }
-select option {
-    color: black;
-}
+
 button {
-    margin: 20px 0 20px 0;
-    width: 120px;
-    height: 40px;
+    background-color: #0f0;
+    color: #000;
+    padding: 10px;
+    border: none;
     border-radius: 5px;
-    border: 2px solid hsl(0, 0%, 100%);
-    background-color: hsla(0, 0%, 10%, 0.1);
-    font-size: 17px;
-    font-weight: 500;
-    color: white ;
     cursor: pointer;
+}
+
+button:hover {
+    background-color: #000;
+    color: #0f0;
+}
+
+#convertedOutput {
+    background-color: #000;
+    color: #0f0;
+    border: 1px solid #0f0;
+    border-radius: 5px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        flex: none;
+        margin-right: 0;
+    }
+
+    label, select, input, button {
+        width: 100%;
+    }
+}
+@media (max-width: 900px) {
+	section span 
+	{
+		width: calc(10vw - 2px);
+		height: calc(10vw - 2px);
+	}
+}
+@media (max-width: 600px) {
+	section span 
+	{
+		width: calc(20vw - 2px);
+		height: calc(20vw - 2px);
+	}
 }
