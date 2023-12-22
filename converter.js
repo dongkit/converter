@@ -51,6 +51,10 @@ function resetFields() {
     document.getElementById("numberInput").value = "";
     document.getElementById("convertedOutput").value = "";
     stopConversionSound();
+
+    
+    document.getElementById("conversionFrom").value = "--";
+    document.getElementById("conversionTo").value = "--";
 }
 
 function updateToOptions() {
@@ -73,10 +77,8 @@ function updateInputType() {
     const fromType = document.getElementById("conversionFrom").value;
     const numberInput = document.getElementById("numberInput");
 
-    // Reset input restrictions
     numberInput.removeAttribute("pattern");
 
-    // Apply input restrictions based on selected number system
     if (fromType === "bin") {
         numberInput.setAttribute("pattern", "[01]*");
         numberInput.setAttribute("maxlength", "32");
@@ -92,7 +94,6 @@ function updateInputType() {
     }
 }
 
-// Ensure only valid digits are allowed for various number systems
 document.getElementById("numberInput").addEventListener("input", function () {
     const fromType = document.getElementById("conversionFrom").value;
     const inputValue = this.value;
